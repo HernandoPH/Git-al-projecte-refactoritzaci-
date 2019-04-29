@@ -1,0 +1,48 @@
+#up_Button_Footer
+{
+	display: none;
+}
+footer{
+    border:1px solid black;
+}
+#container_Footer
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+}
+#barra{
+        position:fixed;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        width:100%;
+        min-height:20px;
+        background: rgba(0, 0, 0, 0.6);
+        color:#dddddd;
+        z-index: 99999;
+        height:50px;
+    }
+#barraInterior{
+        width:100%;
+        position:absolute;
+        padding-left:5px;
+        font-family:verdana;
+        font-size:12px;
+        top:30%;
+        vertical-align:middle;
+        text-align:center;
+    }
+
+@media only screen and (max-width:760px) {
+    #barra{
+        height: 118px;
+        bottom:0px;
+
+    }
+    #barraInterior{
+        top:17%;
+         line-height: 21px;
+    }
+}

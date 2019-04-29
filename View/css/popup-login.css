@@ -1,0 +1,166 @@
+
+#lean_overlay {
+		position: fixed;
+		z-index: 100;
+		top: 0px;
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		background: #000;
+		display: none;
+}
+
+.popupContainer {
+		position: relative;
+		width: 330px;
+
+		height: auto;
+		left: 45%;
+		top: 60px;
+		background: #FFF;
+		border-radius: 20px;
+}
+
+
+.btn {
+		padding: 10px 20px;
+		background: #F4F4F2;
+		height: 22px;
+}
+
+.btn_red {
+		background: #ED6347;
+		color: #FFF;
+}
+
+.btn:hover {
+		background: #E4E4E2;
+}
+
+.btn_red:hover {
+		background: #C12B05;
+}
+
+a.btn {
+		color: #666;
+		text-align: center;
+		text-decoration: none;
+}
+
+a.btn_red {
+		color: #FFF;
+}
+
+.one_half {
+		width: 50%;
+		display: block;
+		float: left;
+}
+
+.one_half.last {
+		width: 45%;
+		margin-left: 5%;
+}
+/* Popup Styles*/
+
+.popupHeader {
+		margin-bottom: 50px;
+		font-size: 16px;
+		text-transform: uppercase;
+
+		
+}
+
+.popupHeader {
+		background-color: rgba(120,120,120,1);
+
+		position: relative;
+		padding: 10px 20px;
+		border-bottom: 1px solid #DDD;
+		font-weight: bold;
+}
+
+.popupHeader .modal_close {
+
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding: 10px 15px;
+		background: #E4E4E2;
+		cursor: pointer;
+		color: #aaa;
+		font-size: 16px;
+}
+.modal_close{
+		background-color: rgba(120,120,120,1);
+
+}
+
+.popupBody {
+		padding-left:  20px;
+		padding-right:   20px;
+		padding-bottom: 30px;
+
+}
+
+
+
+
+
+.action_btns {
+		clear: both;
+		overflow: hidden;
+}
+
+.action_btns a {
+		display: block;
+}
+/* User Login Form */
+
+
+
+.user_login input[type="text"],
+.user_login input[type="email"],
+.user_login input[type="password"] {
+		display: block;
+		width: 90%;
+		padding: 10px;
+		border: 1px solid #DDD;
+		color: #666;
+}
+
+
+
+.input-registro{
+  border-radius: 20px !important;
+  margin-bottom: 23px  !important;
+  display: block;
+  padding: 0 0 0 13px  !important;
+  width: 100%;
+  /*background-color: #fff;*/
+  background: transparent !important;
+  font-family: SourceSansPro-Bold;
+  font-size: 16px;
+  color: #4b2354;
+  line-height: 1.2;
+  /*padding-top: 17px;*/
+  height: 42px;
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.7) !important;
+  -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05) !important;
+  -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05) !important;
+  -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05) !important;
+  -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05) !important;
+  -webkit-transition: all 0.4s !important;
+  -o-transition: all 0.4s !important;
+  -moz-transition: all 0.4s !important;
+  transition: all 0.4s !important;
+
+}
+.input-registro:focus  {
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55) !important;
+  -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55) !important;
+  -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55) !important;
+  -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55) !important;
+  -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55) !important;
+  outline:0px;
+}

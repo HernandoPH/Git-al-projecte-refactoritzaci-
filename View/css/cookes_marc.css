@@ -1,0 +1,62 @@
+#barra{
+        position:fixed;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        width:100%;
+        min-height:20px;
+        background: rgba(0, 0, 0, 0.6);
+        color:#dddddd;
+        z-index: 99999;
+        height:50px;
+    }
+#barraInterior{
+        width:100%;
+        position:absolute;
+        padding-left:5px;
+        font-family:verdana;
+        font-size:12px;
+        top:30%;
+        vertical-align:middle;
+        text-align:center;
+    }
+
+@media only screen and (max-width:760px) {
+    #barra{
+        height: 118px;
+        bottom:0px;
+
+    }
+    #barraInterior{
+        top:17%;
+         line-height: 21px;
+    }
+}
+<div id="barra">
+            <div id="barraInterior">
+                Se utilizan cookies propias y de terceros para mejorar su experiencia de navegación, así como para realizar tareas de analítica. Si continúa navegando entendemos que acepta nuestra. <a href="cookies.pdf" target="_blank" style="padding-left:5px;text-decoration:none;color:#ffffff;">
+                	Política de cookies
+                </a>
+                <a href="javascript:void(0);" style="padding:4px;background:#39b54a;text-decoration:none;color:#fff;" onclick="aceptar_cookies();">Aceptar</a>
+            </div>
+        </div>
+        function aceptar_cookies(){
+    var expire=new Date();
+    expire=new Date(expire.getTime()+31536000000); //En milisegundos, esto sería un año.
+    document.cookie="cookieArtsapartments=1; expires="+expire+";path=/";
+    document.getElementById('barra').style.display = 'none';
+}
+
+function guardarCookie(nombre,valor,fecha) {
+        document.cookie = nombre+"="+valor+";expires="+fecha;
+    }
+
+function comprobarCookies(){
+    var visit=GetCookie("cookieArtsapartments");
+    if (visit!=1){ popbox3(); }
+}
+
+
+function popbox3() {
+    document.getElementById('barra').style.display = 'block';
+}

@@ -1,0 +1,21 @@
+#containerContact > form
+{
+	display: grid;
+	grid-template-areas:"correo correo" 
+						"mensaje mensaje" 
+						"telefono telefono";
+	justify-content: center;
+
+}
+.divCorreo
+{
+	grid-area:correo;
+}
+.divMensaje
+{
+	grid-area:telefono;
+}
+.divTelefono
+{
+	grid-area:correo;
+}

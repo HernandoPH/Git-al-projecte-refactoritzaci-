@@ -1,0 +1,33 @@
+@import 'footer.css';
+@import 'header.css';
+@import 'contact.css';
+*
+{
+  padding: 0;
+  margin:0;
+  list-style: none;
+  outline: none;
+  text-decoration: none;
+}
+
+body
+{
+  /*background-color: #003d91;*/
+  justify-content: center;
+}
+#containerBody
+{
+  display: flex;
+  justify-content: center;
+  width: 45vw;
+  background-color: red;
+  flex-direction: column;
+}
+.top_slider{
+  height: 100vh;
+  background:url(../img/games.gif);
+  background-size: cover;
+}
+#container-registro{
+  margin-top:120px; 
+}
