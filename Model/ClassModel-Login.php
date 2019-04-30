@@ -10,6 +10,7 @@
 			$this ->Correo = $Correo;
 			
 		}
+		//Envia la query a la Bd ademas de incluir el acceso a la BD 
 		function Consulta($sql,$correo1,$Passmd5 ){
     		include 'acesso_bd.php';
 			$stmt = $dbh->prepare($sql);
@@ -17,6 +18,7 @@
             $row=$stmt->fetch(PDO::FETCH_ASSOC);
             return $row;
 		}
+		//Realiza un alert en JS con el mensaje que se le pase popr referencia 
 		function MensajeAlert($message){
    			 echo "<script type='text/javascript'>alert('$message');</script>";
 		}
