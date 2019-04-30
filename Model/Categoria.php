@@ -16,7 +16,6 @@
 			$comprobacionCategorias = "SELECT count(Categoria) FROM categorias WHERE Categoria LIKE '$this->nombre'";
 			$ex = $dbh -> prepare($comprobacionCategorias);
 			$ex -> execute();
-
 			$fila = $ex->fetchColumn();
 			return $fila;
 		}
@@ -24,9 +23,7 @@
 		function insertCategoria()
 		{
 			include '../Model/acesso_bd.php';
-
 			$_sNombre = $_POST['nameCategory'];
-				
 			//Comprobamos que no exista esa categoria ya en la base de datos
 			$queryCategory = "INSERT INTO categorias(Categoria) VALUES(?)";
 			$ejec = $dbh -> prepare($queryCategory);
@@ -45,15 +42,11 @@
 			$nombreCategorias = "SELECT Categoria FROM categorias";
 			$exec = $dbh->prepare($nombreCategorias);
 			$exec -> execute();
-
 			$categoriaObtenida = $exec->fetch(PDO::FETCH_ASSOC);
-
 			$nombreCategoriaActual = "SELECT Categoria FROM categorias WHERE ID_Categoria = $datoObtenido[Categoria]";
 			$exec2 = $dbh->prepare($nombreCategoriaActual);
 			$exec2->execute();
-
 			$categoriaActual = $exec2->fetch(PDO::FETCH_ASSOC);
-
 			return $categoriaActual;
 		}
 		public static function numeroCategorias()

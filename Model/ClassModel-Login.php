@@ -10,40 +10,36 @@
 			$this ->Correo = $Correo;
 			
 		}
+		function Consulta($sql,$correo1,$Passmd5 ){
+    		include 'acesso_bd.php';
+			$stmt = $dbh->prepare($sql);
+            $stmt->execute( array($correo1,$Passmd5));
+            $row=$stmt->fetch(PDO::FETCH_ASSOC);
+            return $row;
+		}
+		function MensajeAlert($message){
+   			 echo "<script type='text/javascript'>alert('$message');</script>";
+		}
 		
 		function comprobar_usuario(){
 			$flag;
 				try {
 
-            		include 'acesso_bd.php';
             		$Passwordmd5=md5($this ->Password);
-                    $stmt = $dbh->prepare("SELECT Correo,Nombre FROM usuarios WHERE Correo = ? AND Password = ?");
-                    $stmt->execute( array($this ->Correo,$Passwordmd5));
-                    $row=$stmt->fetch(PDO::FETCH_ASSOC);
+            		$sqlString="SELECT Correo,Nombre FROM usuarios WHERE Correo = ? AND Password = ?";
+            		$row=$this->Consulta($sqlString,$correo1,$Passmd5);
                      if ($row) {
-
                             $_SESSION['correo-logeado']=$this->Correo;
-
-                           // $_SESSION[`usuariocompleto`]=$row["nombre"]." ".$row["apellidos"];
-
-                            $message = " Password:$this->Password Sesion: ".$_SESSION['login'];
-                            echo "<script type='text/javascript'>alert('$message');</script>";
+                            $this->MensajeAlert("Password:$this->Password Sesion: ".$_SESSION['login']);
 							$flag=true;
 
-                            //header("Location: ../$pagina");
-                    }else{
-
-                       		//echo"<div><p>Datos incorrectos</p></div>";
-                            //$message = "Los campos son invalidos, no existen";
-                            //echo "<script type='text/javascript'>alert('$message');</script>";
+                     }else{
 							$flag=false;
-
-                            //header( "refresh:1;url=../$pagina" ); 
-                    }
+                     }
 
 					
 				}catch(PDOExecption $e) {
-						print "Error!: " . $e->getMessage() . " deshacer</br>";
+					print "Error!: " . $e->getMessage() . " deshacer</br>";
   				}
   				return $flag;
 			
