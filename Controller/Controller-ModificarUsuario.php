@@ -1,4 +1,7 @@
 <?php
+function condicionales_redirecciona($accion){
+	return isset($_POST['$accion']);
+}
 if(isset($_SESSION['correo-logeado'])){
 	require_once(__DIR__."/../Model/ClassModel-Usuario.php");
 
@@ -6,8 +9,7 @@ if(isset($_SESSION['correo-logeado'])){
 	if (!empty($_POST["Nombre"])) {
 		$username=$_POST["Nombre"];
 		$FechaNacimiento=$_POST["FNacimiento"];
-		$pass="";
-		//$correo="cuenta@cuenta.com";	
+		$pass="";	
 		$correo=$_SESSION['correo-logeado'];
 	    $direccion=$_POST["DPostal"];
 	    $Cposta=$_POST["CPostal"];
@@ -22,11 +24,8 @@ if(isset($_SESSION['correo-logeado'])){
 
 
 	}
-
-	
 		$correo_logeado=$_SESSION['correo-logeado'];
     	$_aDatosUser=Usuario::mostrarUser($correo_logeado);
-    	//var_dump($_aDatosUser);
 	    $_sNombre=$_aDatosUser["Nombre"];
 	    $_sCorreo=$_aDatosUser["Correo"];
 	    $_sBirthday=$_aDatosUser["Birthday"];
@@ -36,15 +35,13 @@ if(isset($_SESSION['correo-logeado'])){
 	    $_iTMovil=$_aDatosUser["Movil"];
 	    $_iTFijo=$_aDatosUser["Fijo"];
 
-	
-	 if(isset($_POST['BorrarUser'])){
+	if(condicionales_redirecciona("BorrarUser")){
             include './Controller/Controller-EliminarUsuario.php';
 	}	 
-	if(isset($_POST['BorrarUser'])){
+	if(condicionales_redirecciona("BorrarUser")){
             include './Controller/Controller-EliminarUsuario.php';
 	}
-
-	if(isset($_POST['changepass'])){
+	if(condicionales_redirecciona("changepass")){
             include'./View/View-cambiopass.php';
 	}
 

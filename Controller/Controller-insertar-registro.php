@@ -1,4 +1,12 @@
 <?php
+	function crear_Mensaje_error($mensaje){
+		return " <div style='background-color: red;height: 50px;border-radius: 20px;text-align: center; font-size: 22px;font-weight: bold;vertical-align: middle; width:700px;''>
+                <p style='position: relative;top: 10px;'>".$mensaje."</p>
+            </div>";
+	}
+?>
+
+<?php
 require_once(__DIR__."\\..\\Model\\ClassModel-Usuario.php");
 		$mensajeError="";
 
@@ -19,9 +27,7 @@ require_once(__DIR__."\\..\\Model\\ClassModel-Usuario.php");
 		$newUser->insertar_usuario();
 		}
 		else{
-			$mensajeError=" <div style='background-color: red;height: 50px;border-radius: 20px;text-align: center; font-size: 22px;font-weight: bold;vertical-align: middle; width:700px;''>
-                <p style='position: relative;top: 10px;'>El Usuario ya existe</p>
-            </div>";
+			$mensajeError=crear_Mensaje_error("El usuario ya existe");
 		}
 
 	}
