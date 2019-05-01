@@ -1,6 +1,7 @@
 @import 'footer.css';
 @import 'header.css';
 @import 'contact.css';
+
 *
 {
   padding: 0;
@@ -14,7 +15,8 @@ body
 {
   /*background-color: #003d91;*/
   justify-content: center;
-}
+} 
+
 #containerBody
 {
   display: flex;
@@ -27,7 +29,174 @@ body
   height: 100vh;
   background:url(../img/games.gif);
   background-size: cover;
+  background-position: center;
 }
 #container-registro{
   margin-top:120px; 
 }
+.container{
+  margin-left:15%;
+  margin-right: 15%; 
+}
+.seletorcategory{
+    background-color: rgba(255,255,255,0.8);
+    width: 25vw;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    position: fixed;
+    right: 0;
+    top: 80vh;
+    float: right;
+    border-radius: 5px 0 0 5px;
+}
+.SelectCategory{
+    height: 40px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: dodgerblue;
+    color: white;
+}
+.SelectCategory:hover{
+
+    background-color: rgb(24,28,33);
+
+}
+.SelectCategory option:hover {
+    box-shadow: 0 0 10px 100px #000 inset;
+}
+label{
+  font-weight: bold;
+  font-size: 20px;
+}
+.sectiontitle{
+  margin-top: 80px;
+  margin-bottom: 50px;
+  text-align: center;
+  width: 100%;
+}
+.smallbar{
+  width: 100px;
+  border-bottom: 2px black solid;
+  margin: auto;
+
+}
+.Cookies{
+  margin-top: 150px;
+  margin-bottom: 60vh;
+}
+.producteimg{
+  width: 90%;
+  height: 200px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  
+}
+#productos{
+  margin-bottom: 20px;
+}
+.productos{
+  min-height: 450px;
+  text-align: center;
+ 
+  margin-bottom: 10px;
+}
+.contenido_productos{
+  width: 95%;
+  height: 440px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+.contenido_productos:hover{
+  width: 95%;
+  height: 440px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.Product_title{
+  font-size: 18px;
+  margin-top: 15px;
+  text-align: left;
+  margin-left: 10%;
+}
+.btn_vermas{
+  color:white;
+  background-color:dodgerblue;
+
+  padding:10px;
+
+  border-radius: 5px;
+}
+.top_margin{
+  margin-top: 30px
+}
+@media (max-width: 768px){
+  .seletorcategory{
+    width: 35vw;
+  }
+}
+@media (max-width: 700px){
+  .seletorcategory{
+    position: relative;
+    width: 100vw;
+    text-align: center;
+  }
+  .contenido_productos{
+    height: 380px;
+
+  }
+  .producteimg{
+    height: 170px;
+  }
+  .productos{
+    min-height: 390px;
+  }
+}
+@media (max-width: 320px){
+  #logofoto{
+    width: 66%;
+  }
+  #logofoto{
+    width: 66%;
+  }
+  img.logo {
+    margin-top: -6px;
+}
+.logo {
+    height: 35px;
+}
+}
+
+.midels{
+  margin-top: 30vh;
+
+  vertical-align: center;
+}
+.midels label{
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+.midels input{
+  height: 20px;
+  border-radius: 5px;
+
+}
+.midels .User{
+  margin-bottom:  20px;
+  margin-left: 5%; 
+}
+.submit{
+ 
+  margin-top: 20px;
+
+}
+.submit input{
+  padding: 10px;
+  height: auto;
+  text-transform: uppercase;
+  background: dodgerblue;
+  border-color: dodgerblue;
+}
+ 

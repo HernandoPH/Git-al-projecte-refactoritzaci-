@@ -1,5 +1,5 @@
 <?php  
-
+	
 	class Categoria
 	{
 		private $nombre;
@@ -16,6 +16,7 @@
 			$comprobacionCategorias = "SELECT count(Categoria) FROM categorias WHERE Categoria LIKE '$this->nombre'";
 			$ex = $dbh -> prepare($comprobacionCategorias);
 			$ex -> execute();
+
 			$fila = $ex->fetchColumn();
 			return $fila;
 		}
@@ -23,7 +24,9 @@
 		function insertCategoria()
 		{
 			include '../Model/acesso_bd.php';
+
 			$_sNombre = $_POST['nameCategory'];
+				
 			//Comprobamos que no exista esa categoria ya en la base de datos
 			$queryCategory = "INSERT INTO categorias(Categoria) VALUES(?)";
 			$ejec = $dbh -> prepare($queryCategory);
@@ -42,11 +45,15 @@
 			$nombreCategorias = "SELECT Categoria FROM categorias";
 			$exec = $dbh->prepare($nombreCategorias);
 			$exec -> execute();
+
 			$categoriaObtenida = $exec->fetch(PDO::FETCH_ASSOC);
+
 			$nombreCategoriaActual = "SELECT Categoria FROM categorias WHERE ID_Categoria = $datoObtenido[Categoria]";
 			$exec2 = $dbh->prepare($nombreCategoriaActual);
 			$exec2->execute();
-			$categoriaActual = $exec2->fetch(PDO::FETCH_ASSOC);
+
+			$categoriaActual = $exec2->fetchAll(PDO::FETCH_ASSOC);
+
 			return $categoriaActual;
 		}
 		public static function numeroCategorias()
@@ -67,6 +74,26 @@
 			$ejec -> execute();
 			$arrayNombreCategorias = $ejec->fetchAll(PDO::FETCH_ASSOC);
 			return $arrayNombreCategorias;
+		}
+		public static function nombreCategoria($idCat)
+		{
+			include '../Model/acesso_bd.php';
+			$consultaNombre = "SELECT Categoria FROM categorias WHERE ID_Categoria = $idCat";
+			$ejecutar = $dbh->prepare($consultaNombre);
+			$ejecutar -> execute();
+
+			$nombre = $ejecutar->fetch(PDO::FETCH_ASSOC);
+			return $nombre['Categoria'];
+		}
+		public static function allCategorias()
+		{
+			include 'Model/acesso_bd.php';
+			$consultaCategorias = "SELECT * FROM categorias";
+			$ejecutarConsulta = $dbh->prepare($consultaCategorias);
+			$ejecutarConsulta->execute();
+
+			$arrayCategorias = $ejecutarConsulta->fetchAll(PDO::FETCH_ASSOC);
+			return $arrayCategorias;
 		}
 	}
 

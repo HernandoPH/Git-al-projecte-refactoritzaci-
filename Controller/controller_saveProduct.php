@@ -1,5 +1,8 @@
 <?php  
 	session_start();
+
+if(isset($_SESSION['admin'])){
+
 	require_once '../Model/Producto.php';
 	require_once '../Model/model_ListaProductos.php';
 	$_sMensaje = "";
@@ -50,4 +53,9 @@
 
 		include_once '../View/view_addProduct.php';
 	}
+}
+else
+{
+	echo "No estás logueado";
+}
 ?>

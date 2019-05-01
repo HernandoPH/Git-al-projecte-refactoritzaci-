@@ -22,6 +22,7 @@
 			      <a class="active" href="../Controller/controller_saveProduct.php">Agregar Producto</a>
 			      <a href="../Controller/controller_saveCategory.php">Agregar Categoría</a>
 			      <a href="../Controller/controller_modProduct.php">Modificar Producto</a>
+			      <a href="../index.php?accio=Logout">LogOut</a>
 			    </div>
 			  </div>
 			</div>

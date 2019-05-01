@@ -1,10 +1,8 @@
-<?php 
-  //include("../Controller/Controller-insertar-registro.php");
- ?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registro</title>
+    <title>Registro</title>
     <?php 
         include 'includes/metas.php';
     ?>  
@@ -13,122 +11,141 @@
    
 
 </head>
+
 <body>
-   
-    <?php  
+
+
+<?php  
         include 'header.php';
     ?>
+<section id="Resgistro-section">
+    <div class="container">
+<?php echo $mensajeError; ?>
+<!--================Start Title ================ -->
 
-     <div id="container-registro">
-        
-        <div id="Formulario-Registro">
-            <h2 id="titulo-eventos-index">Registro de Usuario</h2>
-            <form action="./index.php?accio=portada.php" method="post" onsubmit="return checkRegistro()" >
-                <table   class="registro">
-                    <tr>
-                        <td>
-                            Nombre y Apellidos *<br/>
-                            <input class="input-registro" type="text" id="Nombre" name="Nombre" >
-                            <span class="span-error" id="ErrorNombre" ></span>
+        <div class="sectiontitle" id="title-left">
+            <h1>Registro de Usuario</h1>
+            <div class="smallbar"></div>
+        </div>
+<!--================End Title================ -->
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Dirección  <br/>
-                            <input class="input-registro" type="text" name="DPostal" >
-                            <span class="span-error"></span>
+    <!--===================Start left Colum ===================================== ================================-->
 
-                        </td>
-                        <td>
-                            Poblacion <br/>
-                            <input class="input-registro" type="text" name="Poblacio" >
-                            <span class="span-error"></span>
+     <div class="col_lg_6   left Detalles-producto-img" >
+    <form action="./index.php?accio=registrar" method="post" onsubmit="return checkRegistro()" >
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Código Postal <br/>
-                            <input class="input-registro" type="text" name="CPostal" ></td>
-                            <span class="span-error"></span>
 
-                        <td>
-                            Telefono movil <br/>
-                            <input class="input-registro" type="phone" name="TMovil" >
-                            <span class="span-error"></span>
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input">
+                                Nombre y Apellidos *<br/>
+                                <input class="input-registro" type="text" id="Nombre" name="Nombre" >
+                                <span class="span-error" id="ErrorNombre" ></span>
+                            </div>
+                            <!--================End New Input ================ -->
 
-                        </td>
-                    </tr>
-                    <tr>
-                            <td>Telefono fijo <br/>
-                            <input class="input-registro" type="phone" name="TFijo" ></td>
-                            <span class="span-error"></span>
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input">
 
-                            <td>
-                                Fecha de Nacimieto <br/>
+                                 Dirección  <br/>
+                                <input class="input-registro" type="text" name="DPostal" >
+                                <span class="span-error"></span>
+                            </div>
+                            <!--================End New Input ================ -->
+
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input">
+                                Telefono fijo <br/>
+                                <input class="input-registro" type="phone" name="TFijo" >
+                                <span class="span-error"></span>
+                            </div>
+                            <!--================End New Input ================ -->
+
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input">
+                                 Fecha de Nacimieto <br/>
                                 <input class="input-registro" type="date" name="FNacimiento" >
                                 <span class="span-error"></span>
+                            </div>
+                        <!--================End New Input ================ -->
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input">
 
-                            </td>
-                    </tr>
-                    <tr>
-                            <td>
                                 Contraseña * <br/>
                                 <input class="input-registro" type="password" id="Password" name="Password" >
                                 <span class="span-error" id="ErrorPassword"></span>
+                                <p id="mensaje-Error"></p>
+                            </div>
 
-                            </td>
-                            <td>
-                                Repetir Contraseña * <br/>
-                                <input class="input-registro" type="password" id="Password2" name="Password" >
-                                <span class="span-error" id="ErrorPassword2" ></span>
+                        <!--================End New Input ================ -->
+                        
+    <!--===================End left Colum ===================================== ================================-->
 
+     </div>
+     <div class="col_lg_6 left"  >
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input2">
+                                Poblacion <br/>
+                                <input class="input-registro" type="text" name="Poblacio" >
+                                <span class="span-error"></span>
+                            </div>
+                            <!--================End New Input ================ -->
 
-                                   
-                            </td>
-                    </tr>
-                    <tr>
-                            <td>
-                            Correo Electronico * <br/>
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input2">
+                                Código Postal <br/>
+                                <input class="input-registro" type="text" name="CPostal" ></td>
+                                <span class="span-error"></span>
+                            </div  >
+                            <!--================End New Input ================ -->
+
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input2">
+                                Telefono movil <br/>
+                                <input class="input-registro" type="phone" name="TMovil" >
+                                <span class="span-error"></span>
+                            </div>
+                            <!--================End New Input ================ -->
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input2">
+                                Correo Electronico * <br/>
                                 <input class="input-registro" type="email"  id="Correo" name="Correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                                 <span class="span-error" id="ErrorCorreo"></span>
+                            </div>
+                            <!--================End New Input ================ -->
+                            <!--================Start New Input ================ -->
+                            <div class="cont-input2">
 
-                                    
-                            </td>
-                    </tr>
-                    <tr>
-                         <td class="Grises">Los campos con asteriscos son obligatorios (*) </td>
-                     </tr>
-                    <tr>
-                        <td><label id="label-Pdatos">Protección de datos:*</label><input type="checkbox" id="PDatos" name="PDatos" ></td>
+                            Repetir Contraseña * <br/>
+                            <input class="input-registro" type="password" id="Password2" name="Password" >
+                            <span class="span-error" id="ErrorPassword2" ></span>
+                            <p id="mensaje-Error2"></p>
+                            </div>
+                            <!--================End New Input ================ -->
+                            <div class="cont-input2">
 
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="span-error" id="ErrorPDatos"></span>
 
-                            <input class="input-registro" type="submit" name="" value="Aceptar">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span class="span-error" id="ErrorPDatos"></span>
-                        </td>
-                    </tr>
-            </table>
-        </form>
-        
+                        <p>Los campos con asteriscos son obligatorios (*) </p>
 
-      
-    </div>
-    <div id="footer-registro">
+                            <label id="label-Pdatos">Protección de datos:*</label><input type="checkbox" id="PDatos" name="PDatos" >
+                            <br><span class="span-error" id="ErrorPDatos"></span>
+                            <input class="input-registro" type="submit" name="envio" value="Aceptar">
+                        </div>
+
+
+
+
+         
+     </form>
+     </div>
+     
+    
+</section>
      <?php
 
          include'footer.php'; 
          include'includes/Scripts.php'; 
      ?>
-     </div>
-    </div>
+</div>
+
 </body>
 </html>

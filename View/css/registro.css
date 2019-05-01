@@ -1,34 +1,20 @@
-
-.registro tr td {
-  padding-right: 50px;
+#Resgistro-section{
+  margin-top: 120px;
+  margin-bottom: 750px;
+  margin-left: 200px;
 }
 
 
-
-#Formulario-Registro{
-
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
-}
-
-#container-registro {
-  display: grid;
-  grid-template-columns: 28vw 56vw 16vw;
-  grid-template-rows: 16vh 56vh 22vh;
-}
 .input-registro{
-  border-radius: 20px;
+  border-radius: 0px;
   margin-bottom: 23px;
   display: block;
   padding: 0 0 0 13px;
-  width: 100%;
-  /*background-color: #fff;*/
-  background: transparent;
+  width: 20% ;
+ /* background: transparent;*/
   font-family: SourceSansPro-Bold;
   font-size: 16px;
-  color: #4b2354;
+ /* color: #4b2354;*/
   line-height: 1.2;
   /*padding-top: 17px;*/
   height: 32px;
@@ -51,15 +37,276 @@
   -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55);
 }
 
-#footer-registro{
-	grid-row-start: 4;
- 	grid-row-end: 4;
- 	grid-column-start: 1;
- 	grid-column-end: 4;
-}
+.hcompras{
+      width: 1500px;
+      position: relative;
+      left: -250px;
+    }
+   .hcompras >*{
+      background-color: #26272b;
+      color: white;
+      text-align: center;
+     }
+     #Historial-section{
+        margin-top: 150px;
+  margin-bottom: 700px;
+  margin-left: 200px;
+     }
 .span-error{
   color:red;
   position: relative;
   bottom: 20px;
 
 }
+#div-mostrarDatos{
+  height: 30px; 
+  margin-top: 7px;
+  margin-bottom: 7px;
+
+  background-color:
+   lightblue;padding-top: 10px; 
+   border-radius: 20px;
+   position:relative;
+   right: 5px
+}
+#p-mostrarDatos{
+  padding-left: 10px;
+}
+
+.btn_red_borrar{
+    background: #ED6347 !important;
+    color: #FFF;
+    border-radius: 20px;
+    margin-bottom: 23px;
+    display: block;
+    padding: 0 0 0 13px;
+    width: 80%;
+    /* background: transparent;*/
+    font-family: SourceSansPro-Bold;
+    font-size: 16px;
+    /* color: #4b2354;*/
+    line-height: 1.2;
+    /*padding-top: 17px;*/
+    height: 32px;
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.05);
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.btn_red_borrar:focus  {
+  box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55);
+  -o-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55);
+  -ms-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.55);
+}
+.padding-negativo{
+  margin-top: 30px !important;
+}
+
+.cont-input{
+  margin-left: 180px;
+  width: 40% !important;
+
+}
+#title-left{
+  position: relative;
+  left:  -100px;
+}
+.cont-input2 input{
+
+  width: 40% !important;
+
+}
+.cont-input3 input{
+
+  width: 82% !important;
+
+}
+.button-left{
+position: relative;
+left: 160px;
+}
+
+.cambiopass{
+  position: relative;
+  left: 320px;
+  
+}
+.lol{
+  width: 18%!important;
+}
+#title-pass{
+  position: relative;
+  top: 45px;
+}
+#mensaje-Error2
+{
+  color:red;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*======================================== MEDIA QUERY=========================*/
+
+
+
+@media (max-width: 1378px) and (min-width: 1024px){
+  .cont-input{
+    width: 100% !important;
+    margin-left: -1px;
+  }
+  .cont-input2 input{
+    width: 60% !important;
+  }
+  .cont-input3 input{
+   position: relative;
+left: -400px;
+top: 65px;
+  width: 120% !important;
+
+}
+      .button-left{
+position: relative;
+left: -10px;
+width: 73%;
+}
+    .button-right{
+position: relative;
+left: 400px;
+bottom: 60px;
+width: 53%;
+}
+}
+
+
+@media (max-width: 1024px) and (min-width: 768px){
+  .cont-input{
+    width: 100% !important;
+    margin-left: -5px;
+}
+  .cont-input2 input{
+      width: 80% !important;
+  }
+      .button-left{
+position: relative;
+left: -10px;
+width: 73%;
+}
+  .cont-input3 input{
+   position: relative;
+left: -200px;
+  width: 150% !important;
+
+}
+    .button-right{
+position: relative;
+left: 0px;
+width: 73%;
+}
+}
+@media (max-width: 767px) and (min-width: 550px){
+  .cont-input{
+    width: 190% !important;
+    margin-left: -55px;
+  }
+  .cont-input2 input{
+     width: 160% !important;
+    margin-left: -55px;
+
+  }
+    .button-left{
+position: relative;
+left: -10px;
+width: 63%;
+}
+    .button-right{
+position: relative;
+left: 0px;
+width: 63%;
+}
+    .cont-input3 input{
+  width: 200% !important;
+
+}
+}
+
+
+@media (max-width: 550px) and (min-width: 50px){
+  .cont-input{
+    width: 190% !important;
+    margin-left: -55px;
+  }
+  .cont-input2 input{
+     width: 160% !important;
+    margin-left: -55px;
+
+  }
+    .cont-input3 input{
+   position: relative;
+  width: 150% !important;
+
+}
+    .button-left{
+position: relative;
+left: -10px;
+width: 110%;
+}
+
+    .button-right{
+position: relative;
+left: 0px;
+width: 110%;
+}
+.div1{
+  position: relative;
+  left: -70px;
+}
+.div2{
+  position: relative;
+  left: -70px;
+}
+  #title-left{
+  position: relative;
+  left:  -90px;
+}
+}
+
+@media (max-width: 465px) and (min-width: 50px){
+  #title-left{
+  position: relative;
+}
+}
+@media (max-width: 672px) and (min-width: 550px){
+    .button-left{
+position: relative;
+left: -10px;
+width: 83%;
+}
+  #title-left{
+  position: relative;
+  left:  0.3px;
+}
+    .button-right{
+position: relative;
+left: 0px;
+width: 83%;
+}
+}
+
+

@@ -1,30 +1,21 @@
-<?php 
 
- ?>
 <!DOCTYPE html>
 <html lang="en" >
 
 <head>
   <meta charset="UTF-8">
   <title>Popup Login & Signup with jQuery</title>
-  
-<?php 
-include 'includes/metas.php';
-?>	
-	
-    
+  	<?php
+		include 'includes/metas.php';
+    ?>
 
-
-  
 </head>
-
 <body>
 
-		<script type="text/javascript">login_error();</script>
-
+	
   <div class="container">
   		
-		<div id="modal" class="popupContainer" style="display:none;">
+		<div id="modal" class="popupContainer" style="display:block;">
 
 				<div class="popupHeader">
 						<span class="header_title">Login</span>
@@ -37,7 +28,8 @@ include 'includes/metas.php';
 				 ?>
 						<!--..... Comienza  Login form .....................................-->
 						<div class="user_login">
-								<form id="form-login"  method="post" action="index.php?accio=Modificar_user" onsubmit="return checkLogin()">
+
+								<form id="form-login"  method="post" action="index.php?accio=login" onsubmit="return checkLogin()">
 										<label>Email</label>
 										<input class="input-registro" type="email"  id="login-Correo" name="login-Correo" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                                 		<span class="span-error" id="login-ErrorCorreo"></span><br/>
@@ -68,7 +60,6 @@ include 'includes/metas.php';
 <?php 
 include 'includes/Scripts.php';
 ?>
-<script>=function alert1(){alert("aaaaa");}</script>
 
 </body>
 

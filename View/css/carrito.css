@@ -1,0 +1,145 @@
+
+*
+{
+	margin:0;
+	padding: 0;
+}
+.todos
+{
+	margin-top: 0.5vh;
+	padding: 5px;
+	border-radius: 7px;
+	background-color: dodgerblue;
+	font-family: serif;
+	color:white;
+	font-size: 18px;	
+}
+article
+{
+	float: right;
+	position: absolute;
+	top: 0;
+	right:0;
+	height: 100vh;
+	width: 20vw;
+}
+label
+{
+	font-size: 18px;
+	font-weight: normal;
+}
+#buscador > label:first-child
+{
+	position:relative;
+	top: 0.5vh;
+	margin-right: 10px;
+}
+input[type=number]
+{
+	width: 3vw;
+	border-radius: 4px;
+	text-align: center;
+}
+.lupa
+{
+	height: 3vh;
+	width: 4vw;
+	position: relative;
+	right: 1vw;
+	top: 0.4vh;
+}
+#buscador
+{
+	display: flex;
+	justify-content: center;
+	border-top:1px solid black;
+	border-bottom:1px solid black;
+	position: relative;
+	top: 8vh;
+	width: 70vw;
+	padding: 20px;
+	border-radius: 4px;
+	background-color: transparent;
+	font-weight: bold;
+}
+input[type=search]
+{
+	width: 15vw;
+	border-radius: 7px;
+	border-width: 4px;
+	text-align: center;
+	font-weight: bold;
+	font-style: italic;
+}
+#busqueda
+{
+	display: none;
+}
+.headerProductos
+{
+	display: flex;
+	justify-content: space-around;
+	border-bottom:1px solid black;
+}
+.headerProductos span
+{
+	padding-bottom: 20px;
+	font-weight: bold;
+}
+.valores
+{
+	grid-column-start:2;
+}
+.fotoProducto
+{
+	padding-top: 20px;
+	padding-bottom:  20px;
+
+	height: auto;
+	width: 5vw;
+}
+.contenido
+{
+	display: flex;
+	grid-template-columns:1fr 1fr;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom:1px solid black;
+}
+#carrito
+{
+	display: grid;
+	grid-column-gap:20px;
+	width: 80vw;
+}
+#carrito-section{
+	  margin-top: 50px;
+  margin-bottom: 750px;
+	}
+.right{
+	float: right !important;
+}
+#options
+{
+	position: relative;
+	top:120vh;
+	height: 50vh;
+	border:1px solid black;
+}
+.enviarCompra
+{
+	background-color: dodgerblue;
+    color: white;
+    width: 5vw;
+    padding: 12px;
+    border-radius: 7px;
+    font-weight: bold;
+    position: relative;
+    left: 75vw;
+    top: 5px;
+}
+.precioTotal
+{
+	font-size: 15px;
+	font-weight: bold;
+}

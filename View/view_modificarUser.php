@@ -1,6 +1,4 @@
-<?php 
-  //include("../Controller/Controller-insertar-registro.php");
- ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -90,7 +88,7 @@
                     
                     <tr>
                         <td>
-                            <input class="input-registro" type="submit" name="aceptar" value="Aceptar">
+                            <input class="input-registro btn btn_red" type="submit" name="aceptar" value="Aceptar">
                         </td>
                     </tr>
                     <tr>

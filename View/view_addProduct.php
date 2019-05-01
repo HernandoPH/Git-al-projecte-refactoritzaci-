@@ -43,6 +43,7 @@
 					<input type="file" name="foto" class="input-registro" id="foto" accept="image/*">
 					<span class="errorEmpty"></span>
 					<input  type="submit" name="enviarProducto" value="Enviar producto" class="input-registro foto">
+					<a href="../View/admin.php">Volver al Home</a>
 					<p>
 						<?php 
 							echo $_sMensaje;

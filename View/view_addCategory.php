@@ -14,6 +14,7 @@
 				<input class="input-registro" type="text" name="nameCategory" id="category">
 				<span class="errorEmpty"></span>
 				<input class="input-registro" type="submit" name="enviarCategoria" value="Enviar categoría" class="actionsProducts">
+				<a href="../View/admin.php">Volver al Home</a>
 				<p>
 					<?php
 						echo $_sMensaje;

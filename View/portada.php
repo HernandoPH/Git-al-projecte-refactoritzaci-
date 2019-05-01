@@ -9,9 +9,10 @@
 </head>
 <body>
 	<?php  
-		include 'View/header.php';
-		include 'View/top_section.php';
-		include 'View/footer.php';
+		include 'header.php';
+		include 'top_section.php';
+		include 'producte.php';
+		include 'footer.php';
         include 'includes/Scripts.php';
 	?>
 	

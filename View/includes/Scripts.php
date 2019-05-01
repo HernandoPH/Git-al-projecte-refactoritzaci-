@@ -4,15 +4,7 @@
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="View/javaScript/main.js"></script>
 <script>
-var owl = $('.owl-carousel');
-owl.owlCarousel({
-    items:4,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
-});
+
 comprobarCookies();
 
 function GetCookie(name) {
@@ -35,7 +27,7 @@ function GetCookie(name) {
 
 function aceptar_cookies(){
     var expire=new Date();
-    expire=new Date(expire.getTime()+31536000000); //En milisegundos, esto sería un año.
+    expire=new Date(expire.getTime()+31536000000); //En milisegundos, esto sería un año .
     document.cookie="cookieArtsapartments=1; expires="+expire+";path=/";
     document.getElementById('barra').style.display = 'none';
 }
@@ -56,5 +48,10 @@ function popbox3() {
 </script>
 <script type="text/javascript" src="View/JavaScript/registro.js"></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='https://andwecode.com/wp-content/uploads/2015/10/jquery.leanModal.min_.js'></script>
+<!--<script src='https://andwecode.com/wp-content/uploads/2015/10/jquery.leanModal.min_.js'></script>-->
+
 <script  src="View/JavaScript/popup-login.js"></script>
+<script  src="View/JavaScript/jquery.leanModal.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
+<!--<script type="text/javascript" src="jquery.leanModal.min.js"></script>-->

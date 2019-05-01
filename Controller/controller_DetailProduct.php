@@ -3,28 +3,38 @@
 	include '../Model/acesso_bd.php';
 	include_once '../Model/Categoria.php';
 	include_once '../Model/Producto.php';
-
-	$nombreCategorias = Producto::productos($_GET['id']);
-	$categorias = Categoria::nombresCategorias($nombreCategorias);
-
-	
-
-	function valoresCategorias($actualCategory)
+	if(!isset($_POST['modificar']))
 	{
-		$codigo = "";
-		
-		$numeroCategorias = Categoria::nombresCategorias();
-		
-		for ($i=0;$i < count($numeroCategorias);$i++) 
+
+		$nombreCategorias = Producto::productos($_GET['id']);
+		//$categorias = Categoria::nombresCategorias();
+
+		function valoresCategorias($actualCategory)
 		{
-			echo "XXXXXXXXXXXXX".$numeroCategorias[$i]['ID_Categoria']."<br>";
-			if ($numeroCategorias[$i]['ID_Categoria'] == $actualCategory){
-				$codigo .= "<option value='".$numeroCategorias[$i]['ID_Categoria']."' selected>".$numeroCategorias[$i]['Categoria']."</option>";
-			}else{
-				$codigo .= "<option value=".$numeroCategorias[$i]['ID_Categoria']."'>".$numeroCategorias[$i]['Categoria']."</option>";
+			$codigo = "";
+			$numeroCategorias = Categoria::nombresCategorias();
+			
+			for ($i=0;$i < count($numeroCategorias);$i++) 
+			{
+				if ($numeroCategorias[$i]['ID_Categoria'] == $actualCategory){
+					$codigo .= "<option value='".$numeroCategorias[$i]['ID_Categoria']."' selected>".$numeroCategorias[$i]['Categoria']."</option>";
+				}else{
+					$codigo .= "<option value=".$numeroCategorias[$i]['ID_Categoria']."'>".$numeroCategorias[$i]['Categoria']."</option>";
+				}
 			}
+			return $codigo;
 		}
-		return $codigo;
+		include_once'../View/view_detailProduct.php';
 	}
-	include_once'../View/view_detailProduct.php';
+	else
+	{
+		$nombreProducto = $_POST['nombre'];
+		$precioProducto =  (double) $_POST['precio'];
+		$stockProducto = (int) $_POST['stock'];
+		$categoriaProducto = (int) $_POST['categoria'];
+		$modificar = Producto::modificarProducto($_GET['id'],$nombreProducto,$precioProducto,$stockProducto,$categoriaProducto);
+		header('Location:../Controller/controller_modProduct.php');
+	}
+
+
 ?>

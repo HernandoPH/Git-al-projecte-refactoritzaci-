@@ -16,6 +16,7 @@ function ComprobarNombre(Nombre){
 	//------------------------------------------------------------------------------------------
 	//----------------------------------COMPROBAR PASS----------------------------------
 function ComprobarPass(Password,Password2){
+	var spanError = document.getElementById("mensaje-Error2");
 	if (Password == "") {
 		document.getElementById("ErrorPassword").innerHTML = "Introduzca una contraseña por favor";
 		error=false;
@@ -28,25 +29,14 @@ function ComprobarPass(Password,Password2){
 	}else{
 		document.getElementById("ErrorPassword2").innerHTML = "";
 	}
-
-	if (Password!=Password2){
-		error=false;	
-		var divP = document.getElementById("Formulario-Registro");
-		var h2P = document.getElementById("titulo-eventos-index");
-		var newDivTag=document.createElement("div");
-		if(document.getElementById("mensaje-error")==null){
-			newDivTag.setAttribute("style","background-color: red; width: 70%;height: 50px;color: white;font-size: 25px;display: flex;align-items: center;justify-content: center ;font-weight: bold;  border-radius: 20px;");
-			newDivTag.setAttribute("id","mensaje-error");
-			var newPTag = document.createElement("p");                       // Create a <p> element
-			var texto = document.createTextNode("Las contraseñas no coinciden ");       // Create a text node
-			newPTag.appendChild(texto);
-			newDivTag.appendChild(newPTag);
-			h2P.style.marginTop="15px";
-			divP.insertBefore(newDivTag,h2P);
-	
-		}		
-		
-
+	if(Password2 != Password)
+	{
+		error = false;
+		spanError.innerHTML = "Las contraseñas no coinciden";
+	}
+	else
+	{
+		spanError.innerHTML = "";
 	}
 }
 	//---------------END----------COMPROBAR PASS----------------------------------
@@ -81,22 +71,21 @@ function ComprobarPD(PDatos){
 
 function NotificarRegistro(){
 
-		if (error==true) {
-			var newDivTag=document.createElement("div");
-			var divP = document.getElementById("Formulario-Registro");
-			var h2P = document.getElementById("titulo-eventos-index");
-			newDivTag.setAttribute("style","background-color: green; width: 70%;height: 50px;color: white;font-size: 25px;display: flex;align-items: center;justify-content: center ;font-weight: bold;  border-radius: 20px;");
-			newDivTag.setAttribute("id","mensaje-error");
-			//divP.removeChild(getElementById("mensaje-error"))
-			var newPTag = document.createElement("p");                       // Create a <p> element
-			var texto = document.createTextNode("Usuario creado correctamente ");       // Create a text node
-			newPTag.appendChild(texto);
-			newDivTag.appendChild(newPTag);
-			h2P.style.marginTop="15px";
-			divP.insertBefore(newDivTag,h2P);
+	if (error==true) 
+	{
+		var newDivTag=document.createElement("div");
+		var divP = document.getElementById("Formulario-Registro");
+		var h2P = document.getElementById("titulo-eventos-index");
+		newDivTag.setAttribute("style","background-color: green; width: 70%;height: 50px;color: white;font-size: 25px;display: flex;align-items: center;justify-content: center ;font-weight: bold;  border-radius: 20px;");
+		newDivTag.setAttribute("id","mensaje-error");
+		divP.removeChild(document.getElementById("mensaje-error"))
+		var newPTag = document.createElement("p");                       // Create a <p> element
+		var texto = document.createTextNode("Usuario creado correctamente ");       // Create a text node
+		newPTag.appendChild(texto);
+		newDivTag.appendChild(newPTag);
+		h2P.style.marginTop="15px";
+		divP.insertBefore(newDivTag,h2P);
 	}
-
-
 }
 
 
@@ -106,7 +95,6 @@ function checkRegistro(){
 	var Correo = document.getElementById("Correo").value;
 	var Password2 = document.getElementById("Password2").value;
 	var PDatos = document.getElementById("PDatos").checked;
-	alert("aaa");
 	testcorreo	= /\w+@\w+\.+[a-z]/;
 	testpassword = /^.*(?=.*\d)(?=.*[A-Z])/;
 	nombreapellidos =/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
@@ -117,6 +105,20 @@ function checkRegistro(){
 	ComprobarPD(PDatos);
 	NotificarRegistro();
 	return error;
+}
+
+function checkModificarUser(){
+	error=true;
+	var Nombre = document.getElementById("Nombre").value;
+	var Password = document.getElementById("Password").value;
+	var Password2 = document.getElementById("Password2").value;
+	testcorreo	= /\w+@\w+\.+[a-z]/;
+	testpassword = /^.*(?=.*\d)(?=.*[A-Z])/;
+	nombreapellidos =/^([a-zA-Z]{2,}\s[a-zA-z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/;
+	ComprobarNombre(Nombre);
+	ComprobarPass(Password,Password2);
+	return error;
+
 }
 
 
