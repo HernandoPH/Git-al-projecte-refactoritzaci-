@@ -1,4 +1,7 @@
 <?php
+function condicionales_redirecciona($accion){
+	return isset($_POST['$accion']);
+}
 if(isset($_SESSION['correo-logeado'])){
 require_once(__DIR__."\\..\\Model\\ClassModel-Usuario.php");
 	
@@ -17,13 +20,13 @@ require_once(__DIR__."\\..\\Model\\ClassModel-Usuario.php");
 	    $_iTFijo=$_aDatosUser["Fijo"];	
 	include_once __DIR__."\\..\\View\\view_MostrarUser.php";
 
-	} if(isset($_POST['BorrarUsuario'])){
+	} if(condicionales_redirecciona("BorrarUser")){
             include __DIR__.'/Controller/Controller-EliminarUsuario.php';
 	}
-	if(isset($_POST['MostrarUser'])){
+	if(condicionales_redirecciona("MostrarUser")){
             include __DIR__.'/Controller/Controller-ModificarUsuario.php';
 	}
-	if(isset($_POST['changepass'])){
+	if(condicionales_redirecciona("changepass")){
             include __DIR__.'/View/View-cambiopass.php';
 	}
 

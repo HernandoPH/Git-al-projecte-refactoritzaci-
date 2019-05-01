@@ -14,7 +14,7 @@
 
 
 	function comprobarStock_botton($Producto){
-		if($Producto[0]["Stock"]<=0){
+	if($Producto[0]["Stock"]<=0){
 					echo "<div class='top_margin'>
 					<a href='index.php'><input type='button'class='btn_vermas'value='Sin existencias'></a>
     		  </div>";
